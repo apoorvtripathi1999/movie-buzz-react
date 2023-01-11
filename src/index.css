@@ -11,3 +11,132 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.navbar-main .main-container
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: rgb(191, 192, 192);
+}
+.nav-search
+{
+  display: flex;
+  flex-direction: row;
+}
+.list-login
+{
+  display: flex;
+  flex-direction: row;
+}
+.search-bar
+{
+  width: 700px;
+  display: flex;
+  flex-direction: row;
+}
+.search-dropdown
+{
+  margin-right: 10px;
+}
+.navbar-main .main-container .nav-login 
+{
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+  justify-content: center;
+  align-items: baseline;
+}
+.list-group-item
+{
+  margin-right: 10px;
+}
+.nav-elem
+{
+  color: aliceblue;
+  margin-right: 10px;
+}
+.list-login
+{
+  list-style: none;
+}
+.main-container
+{
+  display: flex;
+  flex-direction: row;
+}
+.carousel-item .carimage
+{
+  max-width: 100%;
+  height:min-content;
+}
+.nav-links
+{
+  display: flex;
+  flex-direction: row;
+  justify-content:right;
+  width: 100%;
+  list-style: none;
+  margin-right: 100px;
+}
+.nav-item
+{
+  margin-right: 60px;
+  margin-top: 5px;
+}
+.carousel-caption .caro-discription
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 10px;
+  width: 300px;
+}
+  
+.trailer-main-button {
+    font-family: monospace;
+    font-size: 1.5rem;
+    color: #FAFAFA;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #FAFAFA;
+    background: #252525;
+    box-shadow: 3px 3px #fafafa;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .trailer-main-button:active {
+    box-shadow: none;
+    transform: translate(3px, 3px);
+  }
+  .nav-item
+  {
+      box-shadow: inset 0 0 0 0 #000000;
+      color: #000000;
+      margin: 0 -.25rem;
+      padding: 0 .25rem;
+      transition: color .3s ease-in-out, box-shadow .7s ease-in-out;
+      margin-right: 50px;
+  }
+  .nav-item:hover {
+    box-shadow: inset 100px 0 0 0 #000000;
+    color: white;
+  }
+  .navbar
+  {
+    background-color: #ffffff21;
+  }
+  .genre-list
+  {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 200px;
+    vertical-align: middle;
+    color: #000000;
+  }
+  .genre-list-item
+  {
+    margin: none;
+    padding-left: 10px;
+  }
