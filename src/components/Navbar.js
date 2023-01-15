@@ -1,63 +1,41 @@
-import React, { useEffect, useState, useRef } from "react";
-
+import React from "react";
+import { Link } from "react-router-dom";
 export default function Navbar() {
-//   const [color, setColor] = useState(false);
-//   const headerRef = useRef();
-//   const changeColor = () => {
-//     if (window.screenY > 100) {
-//       setColor(true);
-//     } else {
-//       setColor(false);
-//     }
-//     // className={color?'navbar-main fixed-top navbar-expand-lg  shadow-5-strong':'navbar-main fixed-top navbar-dark bg-dark'}
-//   };
-//   console.log(window.scrollY, "window");
-//   useEffect(() => {
-//     changeColor();
-//   }, []);
+
   return (
-    // <div
-    //   ref={headerRef}
-    //   className={
-    //     color
-    //       ? "navbar-main fixed-top "
-    //       : "navbar-main fixed-top navbar-dark bg-dark"
-    //   }
-    // >
       <nav className="navbar main-container fixed-top navbar-expand-lg  shadow-5-strong ">
         <ul className=" nav-links">
           <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="/">
+            <Link className="nav-link active" aria-current="page" to="/">
               Home
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="/">
+            <Link className="nav-link active" aria-current="page" to="movies">
               Movies
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="/">
+            <Link className="nav-link active" aria-current="page" to="tvseries">
               Tv Series
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="/">
+            <Link className="nav-link active" aria-current="page" to="search">
               Search
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="/">
+            <Link className="nav-link active" aria-current="page" to="watchlist">
               My Watchlist
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="/">
+            <Link className="nav-link active" aria-current="page" to="login">
               Login
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
-    // </div>
   );
 }

@@ -1,17 +1,31 @@
 
 import './App.css';
-import Browsemain from './components/Browsemain';
-import Carousel from './components/Carousel';
+import Home from './components/Home';
 import Navbar from './components/Navbar';
+import { Routes, Route } from "react-router-dom"
+import Top from './components/Top.js'
+import Watchlist from './components/Watchlist.js'
+import Search from './components/Search'
+import Login from './components/Login'
 
 function App() {
   return (
     <div>
-      <div>
       <Navbar/>
-      <Carousel/>
-      </div>
-      <Browsemain/>
+      <Routes>
+        <Route exact path = '/' element ={<Home/>}></Route>
+        <Route exact path = 'movies' element ={<Top
+        type = {"https://api.themoviedb.org/3/discover/movie"}
+        name = {"Movies"}
+        />}></Route>
+        <Route exact path = 'tvseries' element ={<Top
+        type = {"https://api.themoviedb.org/3/discover/tv"}
+        name = {"TV Series"}
+        />}></Route>
+        <Route exact path = 'search' element ={<Search/>}></Route>
+        {/* <Route exact path = 'watchlist' element ={<Watchlist/>}></Route>
+        <Route exact path = 'login' element ={<Login/>}></Route> */}
+      </Routes>
     </div>
   );
 }

@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #212121;
+  background: rgb(46, 45, 45);
 }
 
 code {
@@ -177,6 +178,7 @@ code {
   {
     width: 300px;
     height: auto;
+    color: #FAFAFA;
   }
   .main-display
   {
@@ -222,6 +224,68 @@ code {
     border: 1px solid rgb(255, 255, 255);
     border-radius: 10px;
     display: flex;
+  }
+  .top-titles
+  {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
+  }
+  .top-titles-main
+  {
+    background: rgb(46, 45, 45);
+    color: #FAFAFA;
+    padding-top: 100px;
+  }
+  .top-heading
+  {
+    display: flex;
     justify-content: center;
-    
+  }
+  .search-main
+  {
+    background: rgb(46, 45, 45);
+    padding-top: 300px;
+    max-width: 100%;
+    min-height: 750px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #eee;
+  }
+  .input-wrapper input {
+    background-color: #eee;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    width: 13em;
+    border-radius: 1rem;
+    color: rgb(3, 3, 3);
+    box-shadow: 0 0.4rem #aeabab;
+    cursor: pointer;
+   }
+   
+   .input-wrapper input:focus {
+    outline-color: rgb(0, 0, 0);
+   }
+   .searchbar
+   {
+    padding-top: 50px;
+   }
+  
+  .search-results
+  {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    background: rgb(46, 45, 45);
+    justify-items: center;
+  }
+  .search-heading
+  {
+    display: flex;
+    justify-content: center;
+    background: rgb(46, 45, 45);
+    color: #eee;
+    margin-top: -200px;
+    padding-bottom: 50px;
   }
