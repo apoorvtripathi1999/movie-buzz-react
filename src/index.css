@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #212121;
 }
 
 code {
@@ -88,8 +89,10 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: 10px;
+  padding-bottom: 50px;
   width: 300px;
+  color: #000000;
+  text-decoration:solid;
 }
   
 .trailer-main-button {
@@ -125,18 +128,100 @@ code {
   }
   .navbar
   {
-    background-color: #ffffff21;
+    background-color: #b8b8b8b1;
   }
   .genre-list
   {
     display: flex;
     flex-direction: row;
-    padding-bottom: 200px;
+    padding-bottom: 400px;
     vertical-align: middle;
     color: #000000;
+    justify-content: left;
   }
   .genre-list-item
   {
     margin: none;
     padding-left: 10px;
+    padding-right: 10px;
+  }
+  .card {
+    box-sizing: border-box;
+  width: 190px;
+  height: 254px;
+  background: rgba(217, 217, 217, 0.58);
+  border: 1px solid white;
+  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(6px);
+  border-radius: 17px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  font-weight: bolder;
+  margin-top: 50px;
+  margin-left: 10px;
+   }
+   .card:hover {
+    border: 1px solid black;
+    transform: scale(1.05);
+  }
+  
+  .card:active {
+    transform: scale(0.95) rotateZ(1.7deg);
+  }
+  .movie-card
+  {
+    width: 300px;
+    height: auto;
+  }
+  .main-display
+  {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
+  }
+  .card-img
+  {
+    filter: brightness(0.5)
+  }
+  .main-carousel
+  {
+    position: fixed;
+    overflow:visible;
+  }
+  .browse-main
+  {
+    background: rgb(46, 45, 45);
+    position: relative;
+    top: 800px;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    color: #FAFAFA;
+  }
+  .catagory-main-heading
+  {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+  }
+  .catagory-heading
+  {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+  }
+  .genre
+  {
+    background-color: #000000;
+    color: #FAFAFA;
+    margin-right: 5px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    
   }

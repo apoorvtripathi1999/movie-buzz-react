@@ -26,8 +26,7 @@ export default function Carousel() {
             <div className="carousel-item active">
               <img src={'https://image.tmdb.org/t/p/original/dlxzUj7z1MqEcFiwvvrj0bvBKDY.jpg'} className="d-block carimage" alt="..." />
               <div className='carousel-caption d-none d-md-block'>
-                <div className='caro-discription'>
-                <button className='trailer-main-button'>More Info!!</button>
+                <div className='caro-dgit init iscription'>
                       <h1>M3GAN</h1>
                       <h3>Rating: 7.035/10</h3>
                 </div>
@@ -42,7 +41,6 @@ export default function Carousel() {
                       className="d-block carimage" alt="..." />
                     <div className="carousel-caption d-none d-md-block">
                       <div className='caro-discription'>
-                      <button className='trailer-main-button'>More Info!!</button>
                       <h1>{e.title?e.title:e.name}</h1>
                       <h3>Rating: {e.vote_average}/10</h3>
                       </div>
@@ -50,8 +48,10 @@ export default function Carousel() {
                       {genre.map((a,b)=>{
                         return(
                           <div>
-                           {e.genre_ids.includes(a.id)? <h5 className='genre-list-item' key={b}>{a.name}</h5>: null}
-                          </div> 
+                            { e.genre_ids.includes(a.id)? 
+                            <div className='genre'> <h5 className='genre-list-item' key={b}>{a.name}</h5></div> 
+                            : null }
+                          </div>
                         )
                       })}
                       </div> 
@@ -88,6 +88,3 @@ export default function Carousel() {
     </>
   )
 }
-
-
-// a.id===e.genre_ids
