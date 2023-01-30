@@ -6,7 +6,7 @@ export default function Browsemain() {
     <>
     <div className='browse-main'>
         <div className='catagory-main-heading'>
-        <h1>By Catagories</h1>
+        <h1>ⓢⓒⓡⓞⓛⓛ</h1>
         </div>
         
         <h1 className='catagory-heading'>Action</h1>

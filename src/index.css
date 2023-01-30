@@ -66,10 +66,11 @@ code {
   display: flex;
   flex-direction: row;
 }
-.carousel-item .carimage
+.carimage
 {
   max-width: 100%;
-  height:min-content;
+  height:max-content;
+  filter: brightness(70%);
 }
 .nav-links
 {
@@ -92,8 +93,10 @@ code {
   justify-content: center;
   padding-bottom: 50px;
   width: 300px;
-  color: #000000;
+  color: #ffffff;
   text-decoration:solid;
+  position: fixed;
+  top: 200px;
 }
   
 .trailer-main-button {
@@ -135,10 +138,16 @@ code {
   {
     display: flex;
     flex-direction: row;
-    padding-bottom: 400px;
+    padding-bottom: 150px;
     vertical-align: middle;
     color: #000000;
-    justify-content: left;
+    justify-content:center;
+    width: max-content;
+  }
+  .carousel-caption .genre-list
+  {
+    position: fixed;
+    top: 100px;
   }
   .genre-list-item
   {
@@ -199,7 +208,7 @@ code {
   {
     background: rgb(46, 45, 45);
     position: relative;
-    top: 800px;
+    top: 600px;
     border-top-left-radius: 100px;
     border-top-right-radius: 100px;
     color: #FAFAFA;
@@ -209,6 +218,21 @@ code {
     display: flex;
     justify-content: center;
     padding-top: 50px;
+    animation: color-shift 1s alternate infinite;
+  }
+  @keyframes color-shift{
+    0% {
+      color: rgb(0, 0, 0);
+    }
+    33% {
+      color: rgb(255, 255, 255);
+    }
+    66% {
+      color: rgb(49, 49, 49);
+    }
+    100% {
+      color: rgb(204, 203, 203);
+    }
   }
   .catagory-heading
   {
@@ -289,3 +313,7 @@ code {
     margin-top: -200px;
     padding-bottom: 50px;
   }
+.caro-title
+{
+  font-weight: 600;
+}

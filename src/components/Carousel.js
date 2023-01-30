@@ -41,15 +41,17 @@ export default function Carousel() {
                       className="d-block carimage" alt="..." />
                     <div className="carousel-caption d-none d-md-block">
                       <div className='caro-discription'>
-                      <h1>{e.title?e.title:e.name}</h1>
-                      <h3>Rating: {e.vote_average}/10</h3>
+                      <h1 className='caro-title'>{e.title?e.title:e.name}</h1>
+                      <h3 className='caro-title'>Rating: {e.vote_average}★</h3>
+                      <h3 className='caro-title'>Released: {e.release_date?e.release_date:e.first_air_date}</h3>
+                      <h5 className='caro-title my-2'>{e.overview.slice(0,160)}...</h5>
                       </div>
                       <div className='genre-list'> 
                       {genre.map((a,b)=>{
                         return(
                           <div>
                             { e.genre_ids.includes(a.id)? 
-                            <div className='genre'> <h5 className='genre-list-item' key={b}>{a.name}</h5></div> 
+                            <div className='genre caro-title'> <h5 className='genre-list-item' key={b}>{a.name}</h5></div> 
                             : null }
                           </div>
                         )
@@ -62,8 +64,6 @@ export default function Carousel() {
                 )
               })
             }
-
-
           </div>
           <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
             <span className="carousel-control-prev-icon" aria-hidden="true"></span>

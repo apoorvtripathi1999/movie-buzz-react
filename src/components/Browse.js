@@ -21,7 +21,8 @@ export default function Browse(props) {
         {
           data.map((e,i)=>{
             return (
-              <Moviecard key= {i} 
+              <Moviecard 
+              key= {i} 
               title = {e.title}
               releaseDate = {e.release_date}
               rating = {e.vote_average}
