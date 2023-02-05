@@ -4,16 +4,21 @@ import React, { useEffect, useState } from 'react'
 export default function Moviemain(props) {
 
     const [res, setRes] = useState([])
-    const [cata,setCata] = useState([])
+    const [cata, setCata] = useState([])
+    const [lang, setLang] = useState([])
+    const [company, getCompany] = useState([])
+
 
     var apikey = "?api_key=921345714956c7d9c3db36ac3f20ee09&language=en-US"
     var baselink = "https://api.themoviedb.org/3/movie/"
     var link = `${baselink}${props.name}${apikey}`
 
     useEffect(() => {
-        axios.get(link).then((responce) => { 
-            setRes(responce.data) 
+        axios.get(link).then((responce) => {
+            setRes(responce.data)
             setCata(responce.data.genres)
+            setLang(responce.data.spoken_languages)
+            getCompany(responce.data.production_companies)
         })
     }, [props.name])
 
@@ -38,21 +43,53 @@ export default function Moviemain(props) {
                         <p>Released: {res.release_date}</p>
                         <p>Revenue: {res.revenue / 1000000} Mil</p>
                         <div className='catagory-main-movie'>
-                                  <p>Genres:</p>
-                                 {
-                                    cata.map((e)=>{
-                                        return (
-                                            <p key={e.id}>{e.name}</p>
-                                        )
-                                    })
-                                 } 
-                        </div> 
+                            <p>Genres:</p>
+                            {
+                                cata.map((e) => {
+                                    return (
+                                        <p key={e.id}>{e.name}</p>
+                                    )
+                                })
+                            }
+                        </div>
                         <h4 className='synopsis-main'>Synopsis</h4>
                         <p>{res.overview}</p>
                     </div>
                 </div>
-                <div className='margin-bot'>
-                    <h1>chbhbhejjhve</h1>
+                <div className='bottom-info-lang'>
+                    <h4>Languages Avaialable:</h4>
+                    <div className='group-flex'>
+                        {
+                            lang.map((e, k) => {
+                                return (
+                                    <p key={k} className='mx-1'>{e.english_name}</p>
+                                )
+                            })
+                        }
+                    </div>
+                </div>
+                <div className='bottom-info-company'>
+                    <h4>Production Companies:</h4>
+                    <div className='group-flex'>
+                        {
+                            company.map((e, k) => {
+                                return (
+                                    e.logo_path ? <img className='company-logo my-3' src={`${posterSmlink}${e.logo_path}`} key={k}></img> : <p>{e.name}</p>
+                                )
+                            })
+                        }
+                    </div>
+                </div>
+                <div className='bottom-info-links'>
+                    <h2>GOTO:</h2>
+                    <div className='bottom-link-btn'>
+                        <h4>Visit Homepage:</h4>
+                        <a className='btn btn-light button-link' href={res.homepage} target="_blank" rel="noopener noreferrer">Homepage</a>
+                    </div>
+                    <div className='bottom-link-btn'>
+                        <h4>Visit IMDB:</h4>
+                        <a className='btn btn-light button-link' href={`${"https://www.imdb.com/title/"}${res.imdb_id}`} target="_blank" rel="noopener noreferrer">IMDB</a>
+                    </div>
                 </div>
             </div>
         </>

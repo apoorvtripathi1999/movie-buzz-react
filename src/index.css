@@ -326,6 +326,7 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
+  filter: brightness(0.8)
 }
 .moviemain-main
 {
@@ -354,6 +355,7 @@ code {
 {
  max-width: 300px;
  border-radius: 5%;
+ box-shadow: 5px 5px 20px;
 }
 .synopsis-main
 {
@@ -369,7 +371,43 @@ code {
   position: absolute;
   top: 420px;
 }
-.margin-bot
+.bottom-info-lang
 {
-  margin-top: 400px;
+  padding-top: 300px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 50px;
+  color: #FAFAFA;
+}
+.company-logo
+{
+  width: 400px;
+}
+.bottom-info-company
+{
+  display: flex;
+  flex-direction: column;
+  color: #FAFAFA;
+}
+.group-flex
+{
+  display: flex;
+  flex-direction: row;
+}
+.bottom-link-btn
+{
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  color: #FAFAFA;
+}
+.button-link
+{
+  margin-left: 10px;
+}
+.bottom-info-links
+{
+  color: #FAFAFA;
+  display: flex;
+  flex-direction: column;
 }
