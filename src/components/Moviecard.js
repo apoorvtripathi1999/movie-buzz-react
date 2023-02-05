@@ -1,6 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import Infomodel from './Infomodel'
+// import { Link } from 'react-router-dom'
 
 export default function Moviecard(props) {
   return (
@@ -11,13 +10,13 @@ export default function Moviecard(props) {
             <h5 className="card-title"><b>{props.title}</b></h5>
             <p className="card-text">Released: {props.releaseDate}</p>
             <p className="card-text"><small>Rating: {props.rating}</small></p>
-            <Link to={{
+            {/* <Link to={{
              pathname: '/infomodel',
               state: {
                 title: props.title,
                 poster: props.imgUrl
               }
-            }}>Info</Link>
+            }}>Info</Link> */}
           </div>
       </div>
     </>

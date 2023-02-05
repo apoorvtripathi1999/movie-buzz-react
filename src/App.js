@@ -4,10 +4,9 @@ import Home from './components/Home';
 import Navbar from './components/Navbar';
 import { Routes, Route } from "react-router-dom"
 import Top from './components/Top.js'
-import Watchlist from './components/Watchlist.js'
 import Search from './components/Search'
 import Login from './components/Login'
-import Infomodel from './components/Infomodel';
+import Watchlist from './components/Watchlist';
 
 function App() {
   return (
@@ -15,7 +14,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route exact path = '/' element ={<Home/>}></Route>
-        <Route exact path = '/infomodel' element ={<Infomodel location={location}/>}></Route>
+        {/* <Route exact path = '/infomodel' element ={<Infomodel location={location}/>}></Route> */}
         <Route exact path = 'movies' element ={<Top
         type = {"https://api.themoviedb.org/3/discover/movie"}
         name = {"Movies"}
@@ -25,7 +24,7 @@ function App() {
         name = {"TV Series"}
         />}></Route>
         <Route exact path = 'search' element ={<Search/>}></Route>
-        {/* <Route exact path = 'watchlist' element ={<Watchlist/>}></Route> */}
+        <Route exact path = 'watchlist' element ={<Watchlist/>}></Route>
         <Route exact path = 'login' element ={<Login/>}></Route>
       </Routes>
     </div>

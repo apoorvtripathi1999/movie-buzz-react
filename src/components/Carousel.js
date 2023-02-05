@@ -15,7 +15,6 @@ export default function Carousel() {
       setGenre(responce.data.genres)})
   }, [])
   const img = 'https://image.tmdb.org/t/p/original'
-  console.log(genre, "trend");
   return (
 
     <>
