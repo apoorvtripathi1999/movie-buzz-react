@@ -14,7 +14,7 @@ export default function Moviemain(props) {
     await axios
       .get(`engineering-task.elancoapps.com/api/applications`)
       .then((res) => {
-        console.log(res);
+        console.log(res,"rawData");
       })
       .catch((err) => {
         throw new Error(err);
