@@ -9,10 +9,11 @@ export default function Search() {
     event.preventDefault()
     didSubmit(true)
     }
+    
   return (
     <>
     <div className='search-main'>
-    <h2>Search Movies and Series across all Genres</h2>
+    <h2>Enter The Name</h2>
     <form className="input-wrapper searchbar" onSubmit={handleSubmit}>
     <input className="input searchbar-input" name="text" placeholder="Type here..." type="text" value={queryInput}
     onChange = {e=>{setQueryInput(e.target.value)}}/>

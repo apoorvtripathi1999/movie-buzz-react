@@ -24,7 +24,8 @@ export default function Browse(props) {
               title = {e.title}
               releaseDate = {e.release_date}
               rating = {e.vote_average}
-              imgUrl = {`${baseImageurl}${e.backdrop_path}`}
+              imgUrl = {`${baseImageurl}${e.poster_path}`}
+              id = {e.id}
               />
             )
           })

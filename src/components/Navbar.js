@@ -12,17 +12,12 @@ export default function Navbar() {
           </li>
           <li className="nav-item">
             <Link className="nav-link active" aria-current="page" to="movies">
-              Movies
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link active" aria-current="page" to="tvseries">
-              Tv Series
+              Popular Movies
             </Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link active" aria-current="page" to="search">
-              Search
+              Search Movies
             </Link>
           </li>
           <li className="nav-item">

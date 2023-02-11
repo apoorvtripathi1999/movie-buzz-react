@@ -2,7 +2,6 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Moviecard from './Moviecard'
 export default function Searchresult(props) {
-    var len
     let [query,setQuery] = useState([])
     let baseImageurl = "https://image.tmdb.org/t/p/original"
     let queryUrl = "https://api.themoviedb.org/3/search/movie?api_key=921345714956c7d9c3db36ac3f20ee09&language=en-US&page=1&include_adult=false&query="
@@ -22,7 +21,9 @@ export default function Searchresult(props) {
                 title={e.title?e.title:e.original_name}
                 releaseDate={e.release_date?e.release_date:e.first_air_date}
                 rating={e.vote_average}
-                imgUrl={`${baseImageurl}${e.poster_path}`} />
+                imgUrl={`${baseImageurl}${e.poster_path}`} 
+                id={e.id}
+                />
         )
        })
       }

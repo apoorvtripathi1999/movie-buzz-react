@@ -185,7 +185,7 @@ code {
   }
   .movie-card
   {
-    width: 300px;
+    width: 200px;
     height: auto;
     color: #FAFAFA;
   }
@@ -209,8 +209,6 @@ code {
     background: rgb(46, 45, 45);
     position: relative;
     top: 600px;
-    border-top-left-radius: 100px;
-    border-top-right-radius: 100px;
     color: #FAFAFA;
   }
   .catagory-main-heading
@@ -219,6 +217,7 @@ code {
     justify-content: center;
     padding-top: 50px;
     animation: color-shift 1s alternate infinite;
+
   }
   @keyframes color-shift{
     0% {

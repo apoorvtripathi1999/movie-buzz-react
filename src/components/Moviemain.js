@@ -1,7 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-export default function Moviemain(props) {
+export default function Moviemain() {
+  const {id} = useParams();
   const [res, setRes] = useState([]);
   const [cata, setCata] = useState([]);
   const [lang, setLang] = useState([]);
@@ -9,32 +11,27 @@ export default function Moviemain(props) {
 
   var apikey = "?api_key=921345714956c7d9c3db36ac3f20ee09&language=en-US";
   var baselink = "https://api.themoviedb.org/3/movie/";
-  var link = `${baselink}${props.name}${apikey}`;
-  const getRawData = async () => {
-    await axios
-      .get(`engineering-task.elancoapps.com/api/applications`)
-      .then((res) => {
-        console.log(res,"rawData");
-      })
-      .catch((err) => {
-        throw new Error(err);
-      });
-  };
+  var link = `${baselink}${id}${apikey}`;
+  var imgpath = res.backdrop_path;
+  var poster = `${"https://image.tmdb.org/t/p/original"}${imgpath}`;
+  var posterSmlink = "https://image.tmdb.org/t/p/original";
 
-  useEffect(() => {
+  const getData = ()=>
+  {
     axios.get(link).then((responce) => {
       setRes(responce.data);
       setCata(responce.data.genres);
       setLang(responce.data.spoken_languages);
       getCompany(responce.data.production_companies);
+    }).catch((err) => {
+      throw new Error(err);
     });
-  }, [props.name]);
+  }
+
   useEffect(() => {
-    getRawData();
-  }, []);
-  var imgpath = res.backdrop_path;
-  var poster = `${"https://image.tmdb.org/t/p/original"}${imgpath}`;
-  var posterSmlink = "https://image.tmdb.org/t/p/original";
+   getData();
+  }, [id]);
+
 
   return (
     <>
@@ -89,9 +86,7 @@ export default function Moviemain(props) {
                   src={`${posterSmlink}${e.logo_path}`}
                   key={k}
                 ></img>
-              ) : (
-                <p>{e.name}</p>
-              );
+              ) : null
             })}
           </div>
         </div>

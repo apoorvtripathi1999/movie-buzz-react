@@ -23,7 +23,9 @@ export default function Top(props) {
                                         title={e.title?e.title:e.original_name}
                                         releaseDate={e.release_date?e.release_date:e.first_air_date}
                                         rating={e.vote_average}
-                                        imgUrl={`${baseImageurl}${e.backdrop_path}`?`${baseImageurl}${e.backdrop_path}`:null} />
+                                        imgUrl={`${baseImageurl}${e.poster_path}`?`${baseImageurl}${e.poster_path}`:null} 
+                                        id={e.id}
+                                        />
                                 )
                             })
                         }
