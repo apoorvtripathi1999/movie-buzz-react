@@ -1,8 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import { add,remove } from "../redux/wishlistReducer";
 
 export default function Moviemain() {
+  const dispath = useDispatch()
   const {id} = useParams();
   const [res, setRes] = useState([]);
   const [cata, setCata] = useState([]);
@@ -32,7 +35,12 @@ export default function Moviemain() {
    getData();
   }, [id]);
 
-
+  const handleAdd = (res)=>{
+   dispath(add(res))
+  }
+  const handleRemove = (res)=>{
+    dispath(remove(res))
+   }
   return (
     <>
       <div className="moviemain-main">
@@ -62,9 +70,19 @@ export default function Moviemain() {
             </div>
             <h4 className="synopsis-main">Synopsis</h4>
             <p>{res.overview}</p>
+            <button className="btn btn-dark"
+            onClick={()=>{
+              handleAdd(res)
+            }}
+            >Add To Wishlist</button>
+            <button className="btn btn-dark mx-3"
+            onClick={()=>{
+              handleRemove(res)
+            }}
+            >Remove From Wishlist</button>
           </div>
         </div>
-        <div className="bottom-info-lang">
+        <div className="bottom-info-lang my-5">
           <h4>Languages Avaialable:</h4>
           <div className="group-flex">
             {lang.map((e, k) => {
